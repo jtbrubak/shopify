@@ -1,0 +1,24 @@
+<footer>
+  <ul>
+    {% for link in linklists.footer.links %}
+    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
+</footer> 
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+footer{text-align:center; font-size: 12px; border-top: 1px solid #ccc; margin-bottom:150px;}
+footer ul{padding:10px 0;}
+footer li{display:inline-block;}
+footer li a{padding:0 20px; color: #989898;}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

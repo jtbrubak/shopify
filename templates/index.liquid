@@ -1,1 +1,14 @@
-This is my index page!
+<div class="main-content">
+  <div class="image-container">
+    <img src="{{ 'banner.jpg' | asset_url }}"/>
+  </div>
+
+  <h1>Featured Items</h1>
+
+  {% assign collection = collections.front-page %}
+  <div class="product-display">
+      {% for product in collection.products limit:8 %}
+        {% include 'product-thumbnail' %}
+      {% endfor %}
+  </div>
+</div>

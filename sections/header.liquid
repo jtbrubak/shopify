@@ -1,0 +1,46 @@
+<header>
+  <a href="/"><h1>{{shop.name}}</h1></a>
+  <nav>
+    <ul>
+      {% for link in linklists.main-menu.links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav> 
+</header>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+header {
+	padding: 10px 0px 10px 0px;
+	margin-bottom: 5px;
+	display: flex;
+	height: 75px;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+nav {
+	display: flex;
+	width: 400px;
+	justify-content: center;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+{% endstylesheet %}

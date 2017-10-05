@@ -1,1 +1,8 @@
-This is my collection page!
+<div class="main-content">
+  <h2>{{ collection.title }}</h2>
+  <div class="product-display">
+  {% for product in collection.products %}
+      {% include 'product-thumbnail' %}
+  {% endfor %}
+  </div>
+</div>

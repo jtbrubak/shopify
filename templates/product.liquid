@@ -1,1 +1,18 @@
-This is my product page!
+<div class="product-details">
+    <h2>{{ product.title }}</h2>
+  	<img src="{{ product.featured_image.src | product_img_url: 'medium' }}"/>
+    <div>{{ product.description}}</div>
+    <form action="/cart/add" method="post" class="product-form">
+      <div class="product-variants">
+        {% if product.has_only_default_variant %}
+  			<input name="id" value="{{ product.first_available_variant.id }}" type="hidden">
+		{% else %}
+          <select name="id">
+            {% for variant in product.variants %}
+              <option value="{{ variant.id }}">{{ variant.title }}</option>
+            {% endfor%}
+          </select>
+		{% endif %}
+      <input type="submit" name="add" value="Add to Cart" class="btn" />
+    </form>
+</div>
